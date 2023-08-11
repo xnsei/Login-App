@@ -1,12 +1,31 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const loginUser = async () => {
+    try {
+      const response = await axios.post("http://localhost:8000/login", {
+        email: email,
+        password: password,
+      });
+      if (response.status === 200) {
+        console.log(response.data);
+        const token = response.data.token;
+        if (token) {
+          localStorage.setItem("token", token);
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    alert("Logged in");
+    loginUser();
   };
 
   return (
