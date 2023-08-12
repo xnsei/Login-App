@@ -24,10 +24,11 @@ const authenticateToken = wrapAsync(async (req: any, res: any, next: any) => {
     if (foundUser) {
       next();
     } else {
+      res.status(401);
       return res.json({ messaeg: "Logged in successfully!", token: token });
     }
-    next();
   } catch (error) {
+    res.status(401);
     return res.json({ message: "Error occured: ", Error: error });
   }
 });
@@ -75,6 +76,14 @@ app.get(
   authenticateToken,
   wrapAsync(async (req: any, res: any) => {
     res.json({ message: "user got to the api" });
+  })
+);
+
+app.get(
+  "/authenticate",
+  authenticateToken,
+  wrapAsync(async (req: any, res: any) => {
+    res.json({ message: "user is authenticated" });
   })
 );
 

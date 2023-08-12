@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../redux/userSlice";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const tempMail = useSelector((state) => state.user.email);
+  const dispatch = useDispatch();
 
   const loginUser = async () => {
     try {
@@ -16,6 +21,7 @@ const Login = () => {
         const token = response.data.token;
         if (token) {
           localStorage.setItem("token", token);
+          dispatch(login({ email }));
         }
       }
     } catch (error) {
@@ -50,6 +56,7 @@ const Login = () => {
         <br />
         <button type="submit">Login</button>
       </form>
+      {tempMail && <h2>I'm {tempMail}</h2>}
     </div>
   );
 };
