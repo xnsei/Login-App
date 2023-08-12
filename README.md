@@ -1,2 +1,2 @@
 # Login-App
-Basic Login and Auth App using JWT and bcrypt
+Login App for Authentication and Authorization
