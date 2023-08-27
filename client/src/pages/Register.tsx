@@ -8,11 +8,14 @@ const Register = () => {
 
   const registerUser = async () => {
     try {
-      const response = await axios.post("http://localhost:8000/register", {
-        username: username,
-        email: email,
-        password: password,
-      });
+      const response = await axios.post(
+        "https://login-api-rho.vercel.app/register",
+        {
+          username: username,
+          email: email,
+          password: password,
+        }
+      );
       if (response.status === 200) {
         console.log(response.data);
       }

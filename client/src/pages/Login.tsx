@@ -12,10 +12,13 @@ const Login = () => {
 
   const loginUser = async () => {
     try {
-      const response = await axios.post("http://localhost:8000/login", {
-        email: email,
-        password: password,
-      });
+      const response = await axios.post(
+        "https://login-api-rho.vercel.app/login",
+        {
+          email: email,
+          password: password,
+        }
+      );
       if (response.status === 200) {
         console.log(response.data);
         const token = response.data.token;
