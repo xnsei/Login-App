@@ -18,6 +18,7 @@ export default defineConfig({
         home: "src/pages/home/index.html",
         greet: "src/greet/index.html",
         login: "src/pages/login/index.html",
+        register: "src/pages/Register.tsx",
       },
     },
   },
