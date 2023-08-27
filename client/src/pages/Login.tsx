@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { login } from "../redux/userSlice";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const tempMail = useSelector((state) => state.user.email);
   const dispatch = useDispatch();
 
   const loginUser = async () => {
@@ -59,7 +58,6 @@ const Login = () => {
         <br />
         <button type="submit">Login</button>
       </form>
-      {tempMail && <h2>I'm {tempMail}</h2>}
     </div>
   );
 };
