@@ -4,8 +4,8 @@ const express = require("express");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 
-const wrapAsync = require("./utils/wrapAsync");
-const user = require("./models/user");
+const wrapAsync = require("../utils/wrapAsync");
+const user = require("../models/user");
 
 const app = express();
 
