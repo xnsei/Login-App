@@ -1,4 +1,4 @@
-import connectDB from "./utils/dbConnection";
+import connectDB from "../utils/dbConnection";
 
 const express = require("express");
 const cors = require("cors");
