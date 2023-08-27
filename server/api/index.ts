@@ -73,7 +73,7 @@ app.post("/register", async (req: any, res: any) => {
 
 app.get(
   "/api",
-  authenticateToken,
+  // authenticateToken,
   wrapAsync(async (req: any, res: any) => {
     res.json({ message: "user got to the api" });
   })
