@@ -9,7 +9,7 @@ const Register = () => {
   const registerUser = async () => {
     try {
       const response = await axios.post(
-        "https://login-api-xnsei.vercel.app/register",
+        "https://login-api-wy8d.onrender.com/register",
         {
           username: username,
           email: email,
