@@ -4,8 +4,8 @@ const express = require("express");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 
-const wrapAsync = require("./utils/wrapAsync");
-const user = require("./models/user");
+const wrapAsync = require("../utils/wrapAsync");
+const user = require("../models/user");
 
 const app = express();
 
@@ -73,7 +73,7 @@ app.post("/register", async (req: any, res: any) => {
 
 app.get(
   "/api",
-  authenticateToken,
+  // authenticateToken,
   wrapAsync(async (req: any, res: any) => {
     res.json({ message: "user got to the api" });
   })

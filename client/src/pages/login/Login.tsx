@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { login } from "../redux/userSlice";
+import { login } from "../../redux/userSlice";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +12,7 @@ const Login = () => {
   const loginUser = async () => {
     try {
       const response = await axios.post(
-        "https://login-api-rho.vercel.app/login",
+        "https://login-api-wy8d.onrender.com/login",
         {
           email: email,
           password: password,
