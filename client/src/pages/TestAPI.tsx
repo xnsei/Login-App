@@ -11,7 +11,7 @@ const TestAPI = () => {
     if (token) {
       try {
         const response = await axios.get(
-          "https://login-api-rho.vercel.app/api",
+          "https://login-api-wy8d.onrender.com/api",
           {
             headers: {
               token: token,
@@ -32,7 +32,7 @@ const TestAPI = () => {
     if (token) {
       try {
         const response = await axios.get(
-          "https://login-api-rho.vercel.app/authenticate",
+          "https://login-api-wy8d.onrender.com/authenticate",
           {
             headers: {
               token: token,
