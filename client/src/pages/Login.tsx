@@ -12,7 +12,7 @@ const Login = () => {
   const loginUser = async () => {
     try {
       const response = await axios.post(
-        "https://login-api-rho.vercel.app/login",
+        "https://login-api-xnsei.vercel.app/login",
         {
           email: email,
           password: password,
