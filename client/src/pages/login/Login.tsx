@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { login } from "../redux/userSlice";
+import { login } from "../../redux/userSlice";
 
 const Login = () => {
   const [email, setEmail] = useState("");
